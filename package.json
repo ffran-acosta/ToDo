@@ -1,0 +1,23 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
+    "server": "nodemon ./sever/index.js",
+    "client": "cd cliend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffran-acosta/ToDo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffran-acosta/ToDo/issues"
+  },
+  "homepage": "https://github.com/ffran-acosta/ToDo#readme",
+  "dependencies": {
+    "if-env": "^1.0.4"
+  }
+}
