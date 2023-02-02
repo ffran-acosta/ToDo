@@ -33,6 +33,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: rgba(0, 0, 0, .05) 1px solid;
 }
 
 .button-container{
@@ -53,5 +54,4 @@ body {
 }
 
 @media all and (min-width:1200px){
-
 }

@@ -4,4 +4,6 @@ const app = express();
 const { port, start } = require("./modules/server");
 app.listen(port, start());
 
-app.use(require('./routes/api.routes'))
+
+app.use('/api', require('./routes/db.routes'))
+
