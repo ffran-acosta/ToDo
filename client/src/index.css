@@ -36,7 +36,7 @@ body {
     border-bottom: rgba(0, 0, 0, .05) 1px solid;
 }
 
-.button-container{
+.button-container, .info-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,6 +50,95 @@ body {
     background-color: transparent;
     cursor: pointer;
 }
+
+.edit{
+    border: 1.5px solid #347534;
+    color: #347534;
+    text-transform: uppercase;
+}
+
+.edit:hover{
+    color: #fff;
+    background-color: #6f916f;
+}
+
+.edit:active{
+    border: 1.5px solid #347534;
+    color: #347534;
+    background-color: #347534;
+}
+
+.delete {
+    border: 1.5px solid #c24627;
+    color: #c24627;
+    text-transform: uppercase;
+}
+
+.delete:hover {
+    color: #fff;
+    background-color: #c24627;
+}
+
+.delete:active {
+    border: 1.5px solid #c24627;
+    color: #c24627;
+    background-color: #c24627;
+}
+
+.create{
+    border: 1.5px solid #2789c2;
+    color: #2789c2;
+    text-transform: uppercase;
+}
+
+.create:hover{
+    color: #fff;
+    background-color: #2789c2;
+}
+
+.create:active{
+    border: 1.5px solid #2789c2;
+    color: #2789c2;
+    background-color: #2789c2;
+}
+
+.singout{
+    border: 1.5px solid #c24627;
+    color: #c24627;
+    text-transform: uppercase;
+}
+
+.singout:hover {
+    color: #fff;
+    background-color: #c24627;
+}
+
+.singout:active {
+    border: 1.5px solid #c24627;
+    color: #c24627;
+    background-color: #c24627;
+}
+
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0 0 0 1px;
+}
+
+.tick{
+    padding: 10px;
+}
+
+.tick path{
+    fill:none;
+    stroke: #000;
+    stroke-miterlimit: 10;
+    stroke-width: 32px;
+}
+
 @media all and (min-width: 768px){
 }
 

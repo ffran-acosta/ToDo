@@ -5,7 +5,7 @@ const controller = {
         res.send('asd')
     },
     tasks: async (req, res) => {
-        const userEmail = 'franco@gmail.com'
+        const {userEmail} = req.params
         try {
             const tasks = await pool.query('SELECT * FROM tasks WHERE user_email = $1', [userEmail])
             return res.status(200).json({
