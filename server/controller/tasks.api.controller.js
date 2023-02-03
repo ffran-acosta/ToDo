@@ -14,6 +14,7 @@ const controller = {
             console.error(error)
         }
     },
+
     tasksUser: async (req, res) => {
         const {userEmail} = req.params
         try {
@@ -26,6 +27,7 @@ const controller = {
             console.error(error)
         }
     },
+
     saveTask: async (req, res) => {
         const {user_email, title, progress, date} = req.body
         // const id = uuidv4()
@@ -37,6 +39,7 @@ const controller = {
             console.log(error)
         }
     },
+
     editTask: async (req, res) => {
         const {id} = req.params
         const {user_email, title, progress, date} = req.body
@@ -46,20 +49,17 @@ const controller = {
         } catch (error) {
             console.log(error)
         }
-
     }, 
 
-    users: async (req, res) => {
+    deleteTask: async (req, res) => {
+        const {id} = req.params
         try {
-            const users = await pool.query('SELECT * FROM users')
-            return res.status(200).json({
-                data: users.rows,
-                status: 200
-            })
+            const deleteTask = await pool.query('DELETE FROM tasks WHERE id = $1', [id])
+            res.json(deleteTask)
         } catch (error) {
-            console.error(error)
+            console.log(error)
         }
-    },
+    }
 
     // prueba: async (req, res) => {
     // },
