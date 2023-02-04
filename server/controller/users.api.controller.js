@@ -29,18 +29,18 @@ const controller = {
         }
     },
     login: async (req, res) => {
+
         const { email, password } = req.body
         try {
-            const login = await pool.query(`SELECT FROM users WHERE email = $1`, [email])
-            
-            console.log(login.rows.length)
+            const login = await pool.query(`SELECT * FROM users WHERE email = $1`, [email])
 
             if(!login.rows.length) return res.json({detail: 'User does not exist'})
+            
             const success = await bcryptjs.compare(password, login.rows[0].hashed_password)
+            const token = jwt.sign({ email }, 'secret', { expiresIn: '1hr' })
 
             if(success){
                 res.json({'email': login.rows[0].email, token})
-                const token = jwt.sign({ email }, 'secret', { expiresIn: '1hr' })
             }else{
                 res.json({details: 'Login failed'})
             }
