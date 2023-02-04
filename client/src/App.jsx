@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie'
 const App = () => {
 
   const [tasks, setTask] = useState(null)
-  const [cookies, setCookie, removeCookie] = useCookies(null)
+  const [cookies] = useCookies(null)
   const userEmail = cookies.Email
   const authToken = cookies.AuthToken
   
@@ -21,6 +21,8 @@ const App = () => {
       console.error(error);
     }
   }
+
+  
 
   useEffect(() => {
     if(authToken){
@@ -38,6 +40,7 @@ const App = () => {
       {authToken &&
       <>
       <ListHeader listName={'Weak tick list'} getData={getData} />
+      <p>Welcome back {userEmail}</p>
         {sortedTask?.map((task) => <ListItem key={task.id} task={task} getData={getData} />)} 
         </>}
     </div>
