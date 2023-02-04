@@ -192,8 +192,31 @@ input{
     font-size: 13px;
 }
 
-@media all and (min-width: 768px){
+.auth-container{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
 }
 
-@media all and (min-width:1200px){
+.auth-container-box{
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.auth-container-box form{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.auth-options{
+    display: flex;
+}
+
+.auth-options button{
+    width:50% ;
+    border: none;
+    padding: 1rem;
+    color: #7a7a7a;
 }

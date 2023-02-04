@@ -1,10 +1,12 @@
 import { useState } from "react";
+import { useCookies } from "react-cookie"
 
 const Modal = ( {mode, setShowModal, getData, task} ) => {
 
+    const [cookies, setCookie, removeCookie] = useCookies(null)
     const editMode = mode === 'edit' ? true : false;   
     const [data, setData] = useState({
-        user_email: editMode ? task.user_email : 'franco@gmail.com',
+        user_email: editMode ? task.user_email : cookies.Email,
         title: editMode ? task.title : null,
         progress: editMode ? task.progress : 50,
         date: editMode ? task.date : new Date()
@@ -74,11 +76,8 @@ const Modal = ( {mode, setShowModal, getData, task} ) => {
                         value={data.title} 
                         onChange={handleChange} 
                     />
-
                     <br />
-
                     <label> Drag to select yout current progres </label>
-
                     <input 
                         required 
                         type="range"
@@ -89,7 +88,6 @@ const Modal = ( {mode, setShowModal, getData, task} ) => {
                         value={data.progress} 
                         onChange={handleChange}
                     />
-
                     <input className={mode} type="submit" onClick={editMode ? editData : postData} />
                 </form>
 

@@ -60,8 +60,5 @@ const controller = {
             console.log(error)
         }
     }
-
-    // prueba: async (req, res) => {
-    // },
 }
 module.exports = controller;
