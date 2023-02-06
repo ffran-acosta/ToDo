@@ -15,7 +15,7 @@ const Modal = ( {mode, setShowModal, getData, task} ) => {
     const postData = async (e) => {
         e.preventDefault()
         try {
-            const res = await fetch(`http://localhost:7006/api/save-task`, {
+            const res = await fetch(`${process.env.REACT_APP_SERVERURL}/api/save-task`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ const Modal = ( {mode, setShowModal, getData, task} ) => {
     const editData = async(e) => {
         e.preventDefault()
         try{
-            const res = await fetch(`http://localhost:7006/api/tasks/${task.id}`, {
+            const res = await fetch(`${process.env.REACT_APP_SERVERURL}/api/tasks/${task.id}`, {
                 method: 'PUT',
                 headers: {'content-type': 'application/json'},
                 body: JSON.stringify(data)

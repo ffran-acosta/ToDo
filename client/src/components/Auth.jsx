@@ -22,7 +22,7 @@ const Auth = () => {
             return
         }
 
-        const res = await fetch(`http://localhost:7006/api/user/${endpoint}`, {
+        const res = await fetch(`${process.env.REACT_APP_SERVERURL}/api/user/${endpoint}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
