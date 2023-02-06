@@ -43,17 +43,20 @@ const Auth = () => {
 
                 <form >
                     <h2>{isLogIn ? 'LOG IN' : 'SING UP'}</h2>
-                    <input 
+                    <input
+                        required
                         type="email" 
                         placeholder="email" 
                         onChange={(e) => setEmail(e.target.value)}
                     />
                     <input 
+                        required
                         type="password" 
                         placeholder="password"
                         onChange={(e) => setPassword(e.target.value)}
                     />
                     { !isLogIn && <input 
+                                    required
                                     type="password" 
                                     placeholder="confirm password" 
                                     onChange={(e) => setConfirmPassword(e.target.value)}
@@ -63,7 +66,6 @@ const Auth = () => {
                         className="create" 
                         onClick={(e) => handleSumbit(e, isLogIn ? 'login' : 'singup')} 
                     />
-
                     {error && <p>{error}</p>}
                 </form>
 

@@ -1,5 +1,4 @@
 const pool = require('../database/dbClient')
-const { v4: uuidv4 } = require('uuid')
 
 const controller = {
 

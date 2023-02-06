@@ -11,9 +11,10 @@ app.use(express.json());
 const { port, start } = require("./modules/server");
 app.listen(port, start());
 
-//tasks routes
-app.use('/api', require('./routes/tasks.api.routes'))
 
+//ROUTES
+//tasks
+app.use('/api', require('./routes/tasks.api.routes'))
 //users routes
 app.use('/api', require('./routes/users.api.routes'))
 
