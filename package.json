@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
-    "server": "nodemon ./sever/index.js",
-    "client": "cd cliend && npm start"
+    "build": "cd client && npm install && cd .. && cd server && npm install",
+    "build2": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
+    "server": "cd server && npm test",
+    "client": "cd client && npm test",
+    "server2": "nodemon ./sever/index.js",
+    "client2": "cd cliend && npm start"
   },
   "repository": {
     "type": "git",

@@ -19,4 +19,3 @@ module.exports = router
 
 
 
-// router.get("/prueba", controller.prueba);
