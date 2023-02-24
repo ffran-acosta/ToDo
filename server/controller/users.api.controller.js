@@ -1,4 +1,5 @@
-const pool = require('../database/dbClient')
+// const pool = require('../database/dbClient')
+const pool = require('../database/dbRailway')
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -43,6 +44,7 @@ const controller = {
             const token = jwt.sign({email}, 'secret', {expiresIn: '1hr'})
             if(success){
                 res.json({'email': login.rows[0].email, token})
+                console.log("Login successful", login.rows);
             }else{
                 res.json({details: 'Login failed'})
             }

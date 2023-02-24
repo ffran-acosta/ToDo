@@ -14,3 +14,8 @@ CREATE TABLE users (
 )
 
 INSERT INTO tasks (user_email, title, progress, date) VALUES ('FRANCO', 'first task', 10, now()) --now() fecha actual
+
+INSERT INTO users (email, hashed_password) VALUES ('franco@task', '123456') 
+
+DELETE FROM table WHERE id IN (1, 4, 6, 7)
+DROP TABLE table_name;
