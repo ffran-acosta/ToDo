@@ -1,13 +1,13 @@
-//express
+//EXPRESS
 const express = require('express');
 const app = express();
 
-//json 
+//JSON
 const cors = require('cors');
 app.use(cors())
 app.use(express.json());
 
-//server
+//SERVER
 const { port, start } = require("./modules/server");
 app.listen(port, start());
 

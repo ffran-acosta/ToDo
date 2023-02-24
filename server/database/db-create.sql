@@ -1,6 +1,6 @@
 CREATE DATABASE todoapp;
 
-CREATE TABLE prueba (
+CREATE TABLE tasks (
     id SERIAL PRIMARY KEY,  --SERIAL: autoincrement
     user_email VARCHAR(255),
     title VARCHAR(30),
@@ -13,4 +13,4 @@ CREATE TABLE users (
     hashed_password VARCHAR(255)
 )
 
-INSERT INTO prueba (user_email, title, progress, date) VALUES ('FRANCO', 'first task', 10, now()) --now() fecha actual
+INSERT INTO tasks (user_email, title, progress, date) VALUES ('FRANCO', 'first task', 10, now()) --now() fecha actual
