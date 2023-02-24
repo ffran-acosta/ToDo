@@ -14,7 +14,7 @@ const App = () => {
 
   const getData = async () =>{
     try {
-      const res = await fetch(`${process.env.REACT_APP_SERVERURL}/api/tasks/${userEmail}`)
+      const res = await fetch(`https:/todo-app-server.up.railway.app/api/tasks/${userEmail}`)
       const data = await res.json()
       setTask(data.data)
     } catch (error) {
