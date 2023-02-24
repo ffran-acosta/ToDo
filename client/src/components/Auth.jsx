@@ -3,7 +3,7 @@ import { useCookies } from "react-cookie"
 
 const Auth = () => {
 
-    const [setCookie] = useCookies(null)
+    const [cookies, setCookie, removeCookie] = useCookies(null)
     const [isLogIn, setIsLogin] = useState(true)
     const [email, setEmail] = useState(null)
     const [password, setPassword] = useState(null)
