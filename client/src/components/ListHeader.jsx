@@ -4,7 +4,7 @@ import { useCookies } from 'react-cookie'
 
 const ListHeader = ( {listName, getData} ) => {
 
-    const [removeCookie] = useCookies(null)
+    const [cookies, setCookie, removeCookie] = useCookies(null)
     const [showModal, setShowModal] = useState(false)
 
     const singOut = () => {
