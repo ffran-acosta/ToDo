@@ -9,7 +9,7 @@ const ListItem = ( {task, getData} ) => {
 
     const deleteItem = async () => {
         try{
-            const res = await fetch(`https:/todo-app-server.up.railway.app/api/tasks/${task.id}`, {
+            const res = await fetch(`${process.env.REACT_APP_SERVERURL}/api/tasks/${task.id}`, {
                 method: 'DELETE',
             })
             if (res.status === 200) {
