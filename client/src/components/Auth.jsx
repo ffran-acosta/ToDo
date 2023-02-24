@@ -31,8 +31,8 @@ const Auth = () => {
         if (data.detail){
             setError(data.detail)
         } else {
-            setCookie('Email', data.email)
-            setCookie('AuthToken', data.token)
+            // setCookie('Email', data.email)
+            // setCookie('AuthToken', data.token)
             window.location.reload()
         }
     }
