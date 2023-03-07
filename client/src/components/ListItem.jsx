@@ -2,6 +2,7 @@ import {useState} from 'react'
 import TickIcon from './TickIcon'
 import ProgressBar from './ProgressBar'
 import Modal from './Modal'
+import { AiFillDelete } from 'react-icons/ai';
 
 const ListItem = ( {task, getData} ) => {
 
@@ -32,7 +33,7 @@ const ListItem = ( {task, getData} ) => {
 
             <div className="button-container">
                 <button className='edit' onClick={() => setShowModal(true)}>EDIT</button>
-                <button className='delete' onClick={deleteItem}>DELETE</button>
+                <button className='delete' onClick={deleteItem}><AiFillDelete/></button>
             </div>
 
             {showModal && <Modal mode={'edit'} setShowModal={setShowModal} getData={getData} task={task}/>}
